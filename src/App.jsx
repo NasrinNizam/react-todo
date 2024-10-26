@@ -8,6 +8,8 @@ import { ToDo } from './components/todo/ToDo'
 import { ToDoPage } from './pages/ToDoPage'
 import { LoginPage } from './pages/LoginPage'
 import { LayoutTwo } from './layouts/LayoutTwo'
+import { ToastContainer } from 'react-toastify'
+import { ResetPassword } from './components/login/ResetPassword'
 function App() {
    const route = createBrowserRouter(
     createRoutesFromElements(
@@ -20,6 +22,7 @@ function App() {
         </Route>
         <Route path='/signUpPage' element={<SignUpPage />}/>
         <Route path='/login' element={<LoginPage />}/>
+        <Route path='/forget' element={<ResetPassword />}/>
       </Route>
     )
    )
@@ -27,6 +30,7 @@ function App() {
   return (
     <>
        <RouterProvider router={route}/>
+       <ToastContainer />
     </>
   )
 }

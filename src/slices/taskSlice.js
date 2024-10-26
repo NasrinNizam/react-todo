@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const taskSlice = createSlice({
   name: 'counter',
   initialState: {
-    value: JSON.parse(localStorage.getItem('tasks'))? JSON.parse(localStorage.getItem('tasks')):null,
+    // value: JSON.parse(localStorage.getItem('tasks'))?JSON.parse(localStorage.getItem('tasks')):null,
   },
   reducers: {
     userTask: (state, action) => {

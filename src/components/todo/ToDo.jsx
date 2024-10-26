@@ -1,32 +1,54 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdDelete } from "react-icons/md";
 import { FaRegPenToSquare } from "react-icons/fa6";
-
+import { getDatabase, onValue, push, ref, set } from "firebase/database";
 import './todo.css'
 import { useSelector } from 'react-redux';
 
 export const ToDo = () => {
   // ======== get data from redux
-  // const data = useSelector((state)=>state.counter.value)
-  // console.log(data)
+  // const sliceData =useSelector((state)=>state.counter.value)
+  // console.log(sliceData)
   // ======== react variables
   const [tasks, setTasks] =useState([])
-  const [newTask, setNewTask] = useState('')
+  const [newTask, setNewTask] = useState('[]')
+  const db = getDatabase();
+  
+
 
   // ========= functions
   const handleInput=(e)=>{
     setNewTask(e.target.value)
+    
   }
   const handleAddTask=(e)=>{
     e.preventDefault()
     if(newTask){
       setTasks([...tasks, newTask])
       setNewTask('')
+      localStorage.setItem('tasks', JSON.stringify(tasks))
+      // ==== realtime database
+      set(push(ref(db, 'tasks/')), {
+        name: newTask
+      });
     }
+
     else{
       alert('Please enter a task')
     }
   }
+    //  useEffect(()=>{
+    //   const starCountRef = ref(db, 'tasks/');
+    //    onValue(starCountRef, (snapshot) => {
+    //     let arr=[]
+    //    snapshot.forEach((taskdata)=>{
+    //     arr.push({...taskdata.val(), key:taskdata.key})
+    //    })
+    //    setTasks([arr])
+    //   });
+
+
+    //   },[])
   return (
     <section className='mainToDo'>
       <div className="container">
@@ -43,7 +65,7 @@ export const ToDo = () => {
                   <div key={index} className="taskItem">
                     <div className="flex items-center gap-1 ">
                      <input type="checkbox" />
-                     <p>{task}</p>
+                     <p>{tasks}</p>
                     </div>
                     <div className="flex items-center gap-2">
                      <FaRegPenToSquare  className='text-xl text-green-700' />
