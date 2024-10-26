@@ -1,0 +1,42 @@
+.login{
+    @apply w-full h-screen bg-[#ECEFF5] flex justify-center items-center
+}
+.main{
+    @apply flex justify-center md:gap-[40px] lg:gap-[80px] items-center
+}
+.lotti{
+    @apply lg:w-[500px] md:w-[300px] hidden md:block
+}
+.heading{
+    @apply text-lg font-semibold
+}
+form{
+    @apply w-[300px] md:w-[350px] lg:w-[400px] bg-[#00897B] bg-opacity-20 p-5 rounded-lg
+}
+form h2{
+    @apply text-2xl text-center font-bold mb-5
+}
+form input{
+    @apply w-full h-[40px] lg:h-[50px] rounded-md text-[15px] py-1 px-5 outline-none
+}
+.email{
+    @apply mb-5
+}
+form button{
+    @apply w-full mt-5 bg-[#00897B] active:scale-95 transition-all py-[6px]  text-[18px] rounded-md text-white font-semibold
+}
+form h5{
+    @apply text-[14px] md:text-[18px] mt-5 font-medium text-center
+}
+form span{
+    @apply text-orange-400
+}
+.passDiv{
+    @apply relative
+}
+.icon{
+    @apply absolute top-[50%] translate-y-[-50%] right-2
+}
+.err{
+    @apply text-sm text-red-500
+}

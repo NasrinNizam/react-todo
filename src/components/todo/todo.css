@@ -1,0 +1,30 @@
+.mainToDo{
+    @apply w-full h-full bg-[#DFF2EB] py-10
+}
+.mainn{
+    @apply mx-auto flex justify-center items-start  w-[300px] md:w-[350px] lg:w-[500px] h-[500px] bg-white rounded-lg 
+}
+.card{
+    @apply flex flex-col justify-center items-center gap-5 w-[300px] md:w-[400px] lg:w-[700px]
+}
+.headings{
+    @apply text-2xl font-bold text-center lg:pt-10 md:pt-5
+}
+.list{
+    @apply flex justify-center items-center gap-5 w-[300px] md:w-[350px] lg:w-[500px]
+}
+.list input{
+    @apply w-[200px] md:w-[300px] lg:w-[350px] py-2 px-4 md:py-3 bg-gray-100 rounded-lg outline-none text-sm md:text-lg
+}
+.list button{
+    @apply bg-[#DFF2EB] py-2  md:py-3 px-3 md:px-5 rounded-lg text-sm md:text-lg font-medium 
+}
+.task{
+    @apply flex flex-col gap-5 w-full p-4 lg:mt-10 md:mt-6 mt-3
+}
+.taskItem{
+    @apply flex justify-between items-center bg-[#DFF2EB] p-[10px] rounded-lg 
+}
+.taskItem p{
+    @apply text-sm md:text-lg 
+}
